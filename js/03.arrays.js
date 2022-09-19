@@ -67,7 +67,7 @@ recorrerArreglo();
 
 // Contar el numero de enteros positivos del arreglo
 
-let numeros = [1,3,4,5,-2,-2,-4,false];
+let numeros = [1,3,4,4,2,-2,6,false];
 
 let contarPositivos = function () {
 
@@ -94,11 +94,12 @@ let numeroDivisible = () => {
 
     for (let i = 0; i < numeros.length; i++) {
         
-        if (Number(numeros[i]) % 2 == 0){
-            contador++;
-            console.log(numeros[i]%2);
+        if (numeros[i] > 0) {
+
+            if (numeros[i] % 2 === 0){
+                console.log(numeros[i]%2);
+            }
         }
-        
     }
 
     return contador;

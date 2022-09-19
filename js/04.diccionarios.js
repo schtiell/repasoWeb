@@ -77,19 +77,60 @@ let persona = {
 }
 
 let imprimirDiccionario = function (dictionary) {
-
-   console.log(`Hola ${dictionary.nombre} ${dictionary.apellidos}, encantado!!`);
+    console.log(`Hola ${dictionary.nombre} ${dictionary.apellidos}, encantado!!`);
 }
 
 imprimirDiccionario(persona);
 
 // Contar el numero de propiedades que tiene un objeto
-s
 let contarPropiedades = function (dictionary) {
     
     let contador = 0;
 
     Object.keys(dictionary).forEach( item => contador+=1 );
+
+    console.log(`La cantidad de propiedades del objeto son: ${contador}`);
 }
 
 contarPropiedades(persona);
+
+//
+let contarPropsDict = function (dict) {
+    
+    let contador = 0;
+
+    for (i in dict) {
+        contador++;
+    }
+
+    return contador;
+}
+
+console.log(`El arreglo tiene ${contarPropsDict(persona)}`);
+
+// Diccionario/Objeto
+let automovil = {
+    marca: "Nissan",
+    modelo: "Tiguan",
+    ano: 2020,
+    puertas: 4,
+    combustible: "Diesel"
+}
+
+//
+let uniendoDiccionarios = function (person, auto){
+
+    let diccionarioFinal = {};
+
+    Object.keys(person).forEach( item => {
+        diccionarioFinal[item] = person[item];
+    })
+
+    Object.keys(auto).forEach(item => {
+        diccionarioFinal[item] = auto[item];
+    })
+
+    return diccionarioFinal
+}
+
+console.log(`diccionarioFinal = ${uniendoDiccionarios(persona,automovil)}`);
